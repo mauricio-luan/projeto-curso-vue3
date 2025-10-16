@@ -3,8 +3,10 @@
     <BaseListItem v-for="resource in resources" :key="resource.id" :resources="resource" />
   </ul>
 </template>
+
 <script>
 import BaseListItem from './BaseListItem.vue'
+
 export default {
   components: {
     BaseListItem,

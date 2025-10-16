@@ -1,11 +1,11 @@
 <template>
   <li>
     <header>
-      <h3>{{ resources.title }}</h3>
+      <h3>{{ resource.title }}</h3>
     </header>
     <div>
-      <p>{{ resources.description }}</p>
-      <a :href="resources.link">{{ resources.link }}</a>
+      <p>{{ resource.description }}</p>
+      <a :href="resource.link">{{ resource.link }}</a>
     </div>
     <button>Delete</button>
   </li>
@@ -14,7 +14,7 @@
 <script>
 export default {
   props: {
-    resources: Object,
+    resource: Object,
   },
 }
 </script>
