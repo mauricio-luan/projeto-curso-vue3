@@ -1,4 +1,5 @@
 <template>
+  <the-header title="RemeberMe" />
   <TheResource :resources="resources" />
 </template>
 

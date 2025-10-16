@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <BaseListItem v-for="resource in resources" :key="resource.id" :resources="resource" />
+    <BaseListItem v-for="resource in resources" :key="resource.id" :resource="resource" />
   </ul>
 </template>
 
