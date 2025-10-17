@@ -8,11 +8,9 @@
 import BaseListItem from './BaseListItem.vue'
 
 export default {
+  inject: ['resources'],
   components: {
     BaseListItem,
-  },
-  props: {
-    resources: Array,
   },
 }
 </script>

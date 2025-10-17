@@ -1,32 +1,16 @@
 <template>
   <the-header title="RemeberMe" />
-  <TheResource :resources="resources" />
+  <TheBackground />
+  <!-- <TheForm @input-resource="addResource" />
+  <TheResource :resources="resources" /> -->
 </template>
 
 <script>
-import TheResource from './components/TheResource.vue'
+import TheBackground from './components/layouts/TheBackground.vue'
 
 export default {
   components: {
-    TheResource,
-  },
-  data() {
-    return {
-      resources: [
-        {
-          id: 0,
-          title: 'Study Vue',
-          description: 'You may study a lot',
-          link: 'http://vuejs.org',
-        },
-        {
-          id: 1,
-          title: 'Learn Java',
-          description: 'This is difficult!',
-          link: 'http://google.com',
-        },
-      ],
-    }
+    TheBackground,
   },
 }
 </script>
