@@ -1,8 +1,6 @@
 <template>
   <the-header title="RemeberMe" />
   <TheBackground />
-  <!-- <TheForm @input-resource="addResource" />
-  <TheResource :resources="resources" /> -->
 </template>
 
 <script>

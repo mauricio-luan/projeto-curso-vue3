@@ -1,11 +1,20 @@
 <template>
   <base-card>
+    <base-dialog v-if="isInputInvalid" title="Invalid input" @close="confirmError">
+      <template #default>
+        <p>Unfortunately, at leats one input value is invalid.</p>
+        <p>Please check all input fields.</p>
+      </template>
+      <template #actions>
+        <base-button @click="confirmError">Okay</base-button>
+      </template>
+    </base-dialog>
+
     <form @submit.prevent="resource">
       <div class="form-control">
         <label for="title">Title: </label>
         <input id="title" name="title" type="text" v-model="title" />
       </div>
-
       <div class="form-control">
         <label for="description">Description: </label>
         <textarea
@@ -16,12 +25,10 @@
           rows="3"
         ></textarea>
       </div>
-
       <div class="form-control">
         <label for="link">Link: </label>
         <input id="link" name="link" type="url" v-model="link" />
       </div>
-
       <base-button type="submit">Enviar</base-button>
     </form>
   </base-card>
@@ -35,6 +42,7 @@ export default {
       title: '',
       description: '',
       link: '',
+      isInputInvalid: false,
     }
   },
   emits: ['input-resource'],
@@ -44,7 +52,15 @@ export default {
       const description = this.description
       const link = this.link
 
+      if (title.trim() === '' || description.trim() === '' || link.trim() === '') {
+        this.isInputInvalid = true
+        return
+      }
+
       this.addResource(title, description, link)
+    },
+    confirmError() {
+      this.isInputInvalid = false
     },
   },
 }

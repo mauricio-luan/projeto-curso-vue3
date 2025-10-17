@@ -46,6 +46,10 @@ export default {
       })
       this.stateBackground = 'the-resource'
     },
+    deleteResource(resourceId) {
+      const index = this.resources.find((resource) => resource.id === resourceId)
+      this.resources.splice(index, 1)
+    },
     changeAba(aba) {
       this.stateBackground = aba
     },
@@ -62,6 +66,7 @@ export default {
     return {
       resources: this.resources,
       addResource: this.addResource,
+      deleteResources: this.deleteResource,
     }
   },
 }
